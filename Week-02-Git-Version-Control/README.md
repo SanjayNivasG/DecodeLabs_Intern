@@ -25,6 +25,7 @@ Learn Git and GitHub fundamentals for tracking code changes, maintaining project
 | [workflow.md](workflow.md) | Working directory-to-GitHub workflow |
 | [practice/](practice/) | Small sample files for practicing version control |
 | [merge-conflict-lab.md](merge-conflict-lab.md) | Guided merge-conflict exercise and resolution steps |
+| [branch-practice.md](branch-practice.md) | Feature branch demonstration, file update, and review workflow |
 
 ## TOOLS
 
