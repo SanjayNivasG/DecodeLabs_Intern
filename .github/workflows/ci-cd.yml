@@ -1,0 +1,49 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main
+      - devops/week-03-ci-cd
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Week-03-CI-CD-Pipeline/package-lock.json
+
+      - name: Install dependencies
+        working-directory: Week-03-CI-CD-Pipeline
+        run: npm ci
+
+      - name: Run ESLint
+        working-directory: Week-03-CI-CD-Pipeline
+        run: npm run lint
+
+      - name: Validate JavaScript syntax
+        working-directory: Week-03-CI-CD-Pipeline
+        run: npm run validate:syntax
+
+      - name: Build check
+        working-directory: Week-03-CI-CD-Pipeline
+        run: npm run build
+
+      - name: Run unit tests
+        working-directory: Week-03-CI-CD-Pipeline
+        run: npm test
