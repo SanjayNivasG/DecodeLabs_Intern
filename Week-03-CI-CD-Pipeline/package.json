@@ -1,0 +1,22 @@
+{
+  "name": "decodelabs-week3-cicd",
+  "version": "1.0.0",
+  "description": "Week 3 CI pipeline project for DecodeLabs DevOps internship",
+  "main": "src/app.js",
+  "author": "Sanjay Nivas G",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "node --check src/app.js",
+    "validate:syntax": "node --check src/app.js && node --check tests/app.test.js",
+    "lint": "eslint .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0"
+  }
+}
